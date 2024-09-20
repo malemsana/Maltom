@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maltom Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            padding: 20px 0;
+        }
+
+        #logo {
+            width: 150px;
+            margin: 20px auto;
+            border: 1px solid black;
+        }
+
+        nav {
+            background-color: #f0f0f0; /* Grayish-white background for navbar */
+            padding: 10px; /* Padding around the navbar */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+            margin: 0 auto; /* Center the navbar */
+            width: fit-content; /* Adjust width to content */
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex; /* Flexbox for horizontal layout */
+        }
+
+        nav ul li {
+            margin: 0; /* Remove default margin for list items */
+            border-right: 1px solid #ccc; /* Thin border between items */
+        }
+
+        nav ul li:last-child {
+            border-right: none; /* Remove border from the last item */
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 15px; /* Padding for clickable area */
+            display: block; /* Make the entire area clickable */
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+        }
+
+        nav ul li a:hover {
+            background-color: #FFD700; /* Change background to yellow on hover */
+            color: black; /* Change text color to black on hover */
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .product {
+            border-radius: 15px; /* Rounded edges */
+            margin: 10px;
+            padding: 15px;
+            display: inline-block;
+            width: 300px; /* Adjusted width */
+            background-color: rgba(255, 255, 255, 0.8); /* White background with transparency */
+            position: relative; /* Position for absolute children */
+            overflow: hidden; /* Hide overflow */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        .product img {
+            max-width: 100%; /* Responsive image */
+            border-radius: 10px; /* Rounded edges for images */
+        }
+
+        h3 {
+            text-align: left; /* Align text to the left */
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img id="logo" src="https://i.ibb.co/jThJXx9/IMG-20240825-WA0039-1.jpg" alt="Maltom Store Logo">
+        <h1>Maltom Store</h1>
+
+        <!-- Navigation Bar -->
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact</a></li>
+                <!-- Add more links as needed -->
+                <!-- Note that each link is separated by a thin border -->
+            </ul>
+        </nav>
+    </header>
+
+    <section id="products">
+        <h2>Our Products for Young Science Enthusiasts</h2>
+
+        <div class="product">
+            <h3>DC Motors</h3>
+            <img src="https://i.ibb.co/84vPpp9/Picsart-24-09-20-23-03-55-187.jpg">
+            <p>High-quality DC motors for various applications.</p>
+        </div>
+
+        <div class="product">
+            <h3>Switches</h3>
+            <img src="https://i.ibb.co/mBZY0cF/images.jpg" alt="Switch">
+            <p>Durable and reliable switches for all needs.</p>
+        </div>
+
+        <div class="product">
+            <h3>Diodes</h3>
+            <img src="https://i.ibb.co/9Vn3DdG/Picsart-24-09-20-23-20-49-943.jpg" alt="Diode">
+            <p>Essential components for electronic projects.</p>
+        </div>
+
+        <div class="product">
+            <h3>Batteries</h3>
+            <img src="https://i.ibb.co/QKrQyTn/Picsart-24-09-20-23-30-08-318.png" alt="Battery">
+            <p>Long-lasting batteries for your devices.</p>
+        </div>
+
+        <div class="product">
+            <h3>LEDs</h3>
+            <img src="https://i.ibb.co/9Vn3DdG/Picsart-24-09-20-23-20-49-943.jpg" alt="Diode" alt="LED">
+            <p>Energy-efficient LED lights.</p>
+        </div>
+
+    </section>
+
+    <footer id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: maltomstore@gmail.com</p>
+        <p>Phone: +1234567890</p>
+    </footer>
+</body>
+</html>
