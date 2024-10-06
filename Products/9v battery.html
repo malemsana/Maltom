@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <style>
+        html, body {
+            height: 100%; /* Set height to 100% */
+            margin: 0; /* Remove default margin */
+        }
+
+        body {
+            display: flex; /* Use Flexbox */
+            flex-direction: column; /* Stack elements vertically */
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header, footer {
+            display: flex; /* Use Flexbox */
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center items horizontally */
+            justify-content: center; /* Center items vertically */
+            text-align: center; /* Center text */
+        }
+
+        header {
+            padding: 20px 0;
+        }
+
+        #logo {
+            width: 150px;
+            margin-bottom: 10px; /* Space below logo */
+        }
+
+        nav {
+            background-color: #f0f0f0; 
+            padding: 10px; 
+            border-radius: 10px; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex; 
+            justify-content: center; 
+        }
+
+        nav ul li {
+            margin-right: 10px; /* Add space between items */
+        }
+
+        nav ul li:last-child {
+            margin-right: 0; /* Remove margin from the last item */
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333; 
+            padding: 10px 15px; 
+            display: block; 
+            transition: background-color 0.3s, color 0.3s; 
+        }
+
+        nav ul li a:hover {
+            background-color: #FFD700; 
+            color: black; 
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row; 
+            max-width: 1200px;
+            margin: 20px auto; 
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: #f0f0f0; 
+            flex-grow: 1; /* Allow this section to grow and take available space */
+        }
+
+        .image-section {
+            flex: 1; 
+            position: relative; /* Position for absolute children */
+        }
+
+        .image-slider {
+            display: flex;
+            overflow-x: hidden; /* Hide overflow for sliding effect */
+        }
+
+        .image-slider img {
+            width: 100%; /* Full width of the container */
+            border-radius: 10px; /* Rounded edges for images */
+            border-bottom: solid black 2px;
+        }
+
+        .dots {
+            text-align: center; /* Center dots indicator */
+            margin-top: 10px; /* Space above dots indicator */
+        }
+
+        .dot {
+            height: 10px;
+            width: 10px;
+            margin: 0 5px;
+            background-color: #bbb; /* Gray color for inactive dots */
+            border-radius: 50%; /* Make dots circular */
+            display: inline-block;
+        }
+
+        .active-dot {
+            background-color: #717171; /* Darker color for active dot */
+        }
+
+        .description {
+            flex: 1; 
+            padding-left: 20px; 
+        }
+
+        .description h2 {
+            margin-top: 0; /* Remove default margin from top */
+        }
+
+       .features {
+           margin-top: 20px; 
+           padding: 15px;
+           border-radius: 10px; 
+           background-color: #f0f0f0; 
+           width: 100%; /* Ensure it takes full width */
+           box-sizing: border-box; /* Include padding and border in width */
+       }
+
+       .price {
+           font-size: 24px;
+           font-weight: bold;
+           color: #FFD700; /* Gold color for price */
+       }
+
+       footer {
+           background-color: #333;
+           color: white;
+           padding: 10px 0;
+       }
+       
+       .cntcFooter{
+          text-align:center !important ;
+          margin:5px;
+       }
+       
+       @media (max-width: 768px) {
+           .container {
+              flex-direction: column;
+              align-items:center;
+              text-align:center;
+           }
+           
+           .image-slider img{
+               height:auto !important;
+               border:sold black 1px;
+           }
+           
+           .image-section img{
+               max-width :100%;
+               height:auto !important;
+           }
+           
+           .features{
+               width :100%;
+               text-align:left;
+           }
+           
+           h3{
+               text-align:left !important;
+           }
+           
+           p{
+               text-align:left !important;
+           }
+           
+           h2{
+               text-align:left !important;
+           }
+           
+           .price{
+               text-align:left !important;
+           }
+       }
+    </style>
+</head>
+<body>
+
+<header>
+   <img id="logo" src="https://i.ibb.co/jThJXx9/IMG-20240825-WA0039-1.jpg" alt="Maltom Store Logo">
+   <h1>Maltom Store</h1>
+
+   <!-- Navigation Bar -->
+   <nav>
+       <ul>
+           <li><a href="#">Home</a></li>
+           <li><a href="#">About Us</a></li>
+           <li><a href="#">Products</a></li>
+           <li><a href="#">Contact</a></li>
+       </ul>
+   </nav>
+</header>
+
+<div class="container">
+    <!-- Image Section -->
+    <div class="image-section">
+       <div class="image-slider">
+           <!-- Images will be dynamically loaded here -->
+       </div>
+
+       <!-- Navigation buttons -->
+       <button onclick="prevImage()">&#10094;</button>
+       <button onclick="nextImage()">&#10095;</button>
+
+       <!-- Dots Indicator -->
+       <div class="dots"></div>
+
+       <!-- Optional JavaScript to handle image sliding -->
+       <script>
+           // Array of image URLs
+           const images = [
+               "https://i.ibb.co/KVkJMgH/Picsart-24-09-20-23-30-08-318-1.png",
+               "https://i.ibb.co/w6Hhm5S/Picsart-24-10-06-09-49-38-996.png",
+               "https://i.ibb.co/HC8dTtR/robu-in-9-V-Battery-1-600x338.jpg"
+           ];
+
+           let currentIndex = 0;
+
+           // Function to initialize the slider with images
+           function initializeSlider() {
+               const slider = document.querySelector('.image-slider');
+               const dotsContainer = document.querySelector('.dots');
+
+               images.forEach((src) => {
+                   const img = document.createElement('img');
+                   img.src = src;
+                   img.style.display = 'none'; // Hide all images initially
+                   slider.appendChild(img); // Add each image to the slider
+
+                   // Create dot for each image
+                   const dot = document.createElement('span');
+                   dot.classList.add('dot');
+                   dot.onclick = () => showImage(images.indexOf(src)); // Show image on dot click
+                   dotsContainer.appendChild(dot); // Add dot to dots container
+               });
+               showImage(currentIndex); // Show the first image
+           }
+
+           function showImage(index) {
+               const imagesElements = document.querySelectorAll('.image-slider img');
+               const dotsElements = document.querySelectorAll('.dot');
+
+               if (index >= imagesElements.length) currentIndex = index = 0; // Loop back to first image
+               if (index < 0) currentIndex = index = imagesElements.length - 1; // Go to last image
+
+               imagesElements.forEach((img, i) => {
+                   img.style.display = i === index ? 'block' : 'none'; // Show only current image
+               });
+
+               // Update active dot
+               dotsElements.forEach((dot, i) => {
+                   dot.classList.toggle('active-dot', i === index); // Highlight active dot
+               });
+           }
+
+           function nextImage() {
+               showImage(++currentIndex); // Increment index and show next image
+           }
+
+           function prevImage() {
+               showImage(--currentIndex); // Decrement index and show previous image
+           }
+
+           // Initialize by loading images into the slider
+           initializeSlider();
+       </script>
+
+   </div>
+
+   <!-- Description Section -->
+   <div class="description">
+       <h2>9v Battery</h2>
+       <p>This is a 9 volts battery, it can be used to provide power to all your equipment—DC motors, LEDs, transistors, multimeters—it's all covered.</p>
+
+       <!-- Price Display -->
+       <div class="price"><h3>₹40</h3></div>
+   </div>
+</div>
+
+<div class="features">
+   <ul>
+       <li>9 volts</li>
+       <li>30mA current output</li>
+       <li>Leak resistance</li>
+       <li>Shelf life: 5-10 years</li>
+       <li>Temperature resistant</li>
+   </ul>
+</div>
+
+<footer id="contact">
+    <h2 class="cntcFooter">Contact Us</h2>
+    <p class="cntcFooter">Email: maltomstore@gmail.com</p>
+    <p class="cntcFooter">Phone: +1234567890</p>
+    <p class="cntcFooter">
+      ©2024 Vect yard provident, all rights reserved.
+    </p>
+</footer>
+
+</body>
+  </html>
